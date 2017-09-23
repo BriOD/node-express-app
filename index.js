@@ -18,5 +18,16 @@ passport.use(
   )
 );
 
+// authenticate user for the first time. kick user into OAuth flow
+app.get(
+  '/auth/google',
+  passport.authenticate('google', {
+    scope: ['profile', 'email']
+  })
+);
+
+// exchange code for user details from google. exchange code for user profile
+app.get('/auth/google/callback', passport.authenticate('google'));
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT);
