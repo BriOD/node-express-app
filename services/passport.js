@@ -5,6 +5,18 @@ const keys = require('../config/keys');
 
 const User = mongoose.model('users');
 
+// generates an identifying piece of info, and passport stuff that into the cookie.
+passport.serializeUser((user, done) => {
+  done(null, user.id);
+});
+
+// turn an id into a mongoose user model instance
+passport.deserializeUser((id, done) => {
+  User.findById(id).then(user => {
+    done(null, user);
+  });
+});
+
 passport.use(
   new GoogleStrategy(
     {
