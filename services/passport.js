@@ -26,14 +26,14 @@ passport.use(
       proxy: true
     },
     async (accessToken, refreshToken, profile, done) => {
-      const existingUser = await User.findOne({ googleId: profile.id }); // check to see if the user already exists. query the db
-      done(null, existingUser);
+      const existingUser = await User.findOne({ googleId: profile.id });
+
       if (existingUser) {
-        // we already have a record with giver profile id
-      } else {
-        const user = await new User({ googleId: profile.id }).save(); // grab the id off the profile and create a new user
-        done(null, user);
+        return done(null, existingUser);
       }
+
+      const user = await new User({ googleId: profile.id }).save();
+      done(null, user);
     }
   )
 );
