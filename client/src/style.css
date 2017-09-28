@@ -1,8 +1,8 @@
 .header {
-  background-color: black;
+  background-color: blue;
   text-align: center;
-  color: white;
-  height: 100px;
+  color: red;
+  height: 120px;
   width: auto;
 }
 
