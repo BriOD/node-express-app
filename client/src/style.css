@@ -1,0 +1,16 @@
+.header {
+  background-color: black;
+  text-align: center;
+  color: white;
+  height: 100px;
+  width: auto;
+}
+
+.right {
+  float: right;
+  padding-right: 4px;
+}
+
+.container {
+  padding: 2px;
+}
