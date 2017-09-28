@@ -10,7 +10,13 @@ module.exports = app => {
   );
 
   // exchange code for user details from google. exchange code for user profile
-  app.get('/auth/google/callback', passport.authenticate('google'));
+  app.get(
+    '/auth/google/callback',
+    passport.authenticate('google'),
+    (req, res) => {
+      res.redirect('/tournaments');
+    }
+  );
 
   app.get('/api/logout', (req, res) => {
     req.logout();
