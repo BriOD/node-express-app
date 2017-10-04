@@ -22,6 +22,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 require('./routes/authRoutes')(app);
+require('./routes/tourneyRoutes')(app);
 
 // instruct express server to handle create-react-app routes in production
 if (process.env.NODE_ENV === 'production') {
