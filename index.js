@@ -5,6 +5,8 @@ const passport = require('passport');
 
 const keys = require('./config/keys');
 require('./models/User');
+require('./models/Tourney');
+
 require('./services/passport');
 
 mongoose.connect(keys.mongoURI);
@@ -21,8 +23,8 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-require('./routes/authRoutes')(app);
 require('./routes/tourneyRoutes')(app);
+require('./routes/authRoutes')(app);
 
 // instruct express server to handle create-react-app routes in production
 if (process.env.NODE_ENV === 'production') {

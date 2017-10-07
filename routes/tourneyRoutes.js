@@ -6,7 +6,7 @@ const tourneyTemplate = require('../services/emailTemplates/tourneyTemplate');
 const Tourney = mongoose.model('tourneys');
 
 module.exports = app => {
-  app.post('/api/tourneys', requireLogin, (req, res) => {
+  app.post('/api/tourneys', requireLogin, async (req, res) => {
     const { venue, buyin, date, receipt } = req.body;
 
     const tourney = new Tourney({
@@ -17,8 +17,16 @@ module.exports = app => {
       _user: req.user.id
     });
 
-    // Send an email
-    const mailer = new Mailer(tourney, tourneyTemplate(tourney));
-    mailer.send();
+    try {
+      // Send an email
+      // const mailer = new Mailer(tourney, tourneyTemplate(tourney));
+      // await mailer.send();
+      await tourney.save();
+      const user = await req.user.save();
+
+      res.send(user);
+    } catch (err) {
+      res.status(422).send(err);
+    }
   });
 };
