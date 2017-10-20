@@ -5,7 +5,8 @@ import TourneyField from './TourneyField';
 
 const FIELDS = [
   { placeholder: 'Venue', name: 'venue', type: 'text' },
-  { placeholder: 'Buy In', name: 'buyin', type: 'text' }
+  { placeholder: 'Buy In', name: 'buyin', type: 'text' },
+  { placeholder: 'Image URL for receipt', name: 'receipt', type: 'text' }
 ];
 
 class TourneyForm extends Component {
@@ -29,7 +30,6 @@ class TourneyForm extends Component {
       <div>
         <form onSubmit={this.props.handleSubmit(values => console.log(values))}>
           {this.renderFields()}
-          <Field component="input" value={null} name="receipt" type="file" />
           <button className="submitBttn" type="submit">
             Submit
           </button>
