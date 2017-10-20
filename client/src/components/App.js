@@ -6,6 +6,7 @@ import * as actions from '../actions';
 import Header from './Header';
 import Landing from './Landing';
 import Dashboard from './Dashboard';
+import TourneyForm from './TourneyForm';
 
 class App extends Component {
   componentDidMount() {
@@ -20,6 +21,7 @@ class App extends Component {
             <Header />
             <Route exact path="/" component={Landing} />
             <Route exact path="/tourneys" component={Dashboard} />
+            <Route exact path="/tourneys/new" component={TourneyForm} />
           </div>
         </BrowserRouter>
       </div>
