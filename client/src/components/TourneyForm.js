@@ -29,7 +29,7 @@ class TourneyForm extends Component {
 
   onSubmit(values) {
     // console.log(this.props.history);
-    this.props.submitTourney(values);
+    this.props.submitTourney(values, this.props.history);
   }
 
   render() {
