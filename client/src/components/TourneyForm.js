@@ -1,7 +1,9 @@
 import _ from 'lodash';
 import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
+import { connect } from 'react-redux';
 import TourneyField from './TourneyField';
+import { submitTourney } from '../actions';
 
 const FIELDS = [
   { placeholder: 'Venue', name: 'venue', type: 'text' },
@@ -25,13 +27,18 @@ class TourneyForm extends Component {
     });
   }
 
+  onSubmit(values) {
+    // console.log(this.props.history);
+    this.props.submitTourney(values);
+  }
+
   render() {
     return (
       <div>
-        <form onSubmit={this.props.handleSubmit(values => console.log(values))}>
+        <form onSubmit={this.props.handleSubmit(this.onSubmit.bind(this))}>
           {this.renderFields()}
           <button className="submitBttn" type="submit">
-            Submit
+            Create Tourney
           </button>
         </form>
       </div>
@@ -51,7 +58,11 @@ function validate(values) {
   return errors;
 }
 
+function mapStateToProps(state) {
+  return { formValues: state.form.tourneyForm.values };
+}
+
 export default reduxForm({
   validate: validate,
   form: 'tourneyForm'
-})(TourneyForm);
+})(connect(mapStateToProps, { submitTourney })(TourneyForm));
