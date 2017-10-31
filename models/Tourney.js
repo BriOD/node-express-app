@@ -5,7 +5,7 @@ const tourneySchema = new Schema({
   _user: { type: Schema.Types.ObjectId, ref: 'User' },
   venue: String,
   buyin: String,
-  date: { type: Date, default: Date.now },
+  date: { type: Date, default: Date.now() },
   receipt: String
 });
 

@@ -15,7 +15,7 @@ export const submitTourney = (values, history) => async dispatch => {
 
 export const fetchTourneys = () => async dispatch => {
   const res = await axios.get('/api/tourneys');
-
+  // console.log('data', res.data);
   dispatch({ type: FETCH_TOURNEYS, payload: res.data });
 };
 

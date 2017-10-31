@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+
 import { connect } from 'react-redux';
 import { fetchTourneys } from '../actions';
 
@@ -8,9 +10,9 @@ class TourneyList extends Component {
   }
 
   renderTourneys() {
-    this.props.tourneys.map(tourney => {
+    return this.props.tourneys.map(tourney => {
       return (
-        <div key={tourney._id}>
+        <div>
           <h3>{tourney.venue}</h3>
           <h3>{tourney.buyin}</h3>
           <h3>{new Date(tourney.date).toLocaleDateString()}</h3>
@@ -24,15 +26,16 @@ class TourneyList extends Component {
     console.log('tourneys:', this.props.tourneys);
     return (
       <div>
-        <h1>These are all my Tourneys</h1>
+        <h1>Tourney List</h1>
         {this.renderTourneys()}
+        <Link to="tourneys/new">Add New Tourney</Link>
       </div>
     );
   }
 }
 
-function mapStateToProps(state) {
-  return { tourneys: state.tourneys };
+function mapStateToProps({ tourneys }) {
+  return { tourneys };
 }
 
 export default connect(mapStateToProps, { fetchTourneys })(TourneyList);
