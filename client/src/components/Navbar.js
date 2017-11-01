@@ -9,19 +9,17 @@ const Navbar = () => {
         <div className="container">
           <ul className="nav">
             <li>
-              <Link className="text" to="/">
+              <Link className="text btn" to="/">
                 Home
               </Link>
             </li>
             <li>
-              <Link className="text" to="/toureys">
+              <Link className="text btn" to="/tourneys">
                 Tourneys
               </Link>
             </li>
-            <li>
-              <LogInBttn />
-            </li>
           </ul>
+          <LogInBttn />
         </div>
       </div>
     </div>

@@ -112,3 +112,14 @@ div {
   color: red;
   text-decoration: underline;
 }
+
+.btn {
+  border: none;
+  border-radius: 1px;
+  display: inline-block;
+  height: 36px;
+  line-height: 36px;
+  text-transform: uppercase;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+}

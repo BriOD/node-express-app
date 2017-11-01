@@ -15,8 +15,8 @@ class LogInBttn extends Component {
 
   render() {
     return (
-      <bttn className="googleBttn">
-        <ul className="right">{this.renderContent()}</ul>
+      <bttn className="btn right">
+        <ul>{this.renderContent()}</ul>
       </bttn>
     );
   }
