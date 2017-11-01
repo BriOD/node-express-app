@@ -12,7 +12,7 @@ class TourneyList extends Component {
   renderTourneys() {
     return this.props.tourneys.map(tourney => {
       return (
-        <div>
+        <div key={tourney._id}>
           <h3>{tourney.venue}</h3>
           <h3>{tourney.buyin}</h3>
           <h3>{new Date(tourney.date).toLocaleDateString()}</h3>
