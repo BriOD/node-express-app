@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import * as actions from '../actions';
 
 import Header from './Header';
+import Navbar from './Navbar';
 import Landing from './Landing';
 // import Dashboard from './Dashboard';
 import TourneyForm from './TourneyForm';
@@ -19,6 +20,7 @@ class App extends Component {
       <div className="container">
         <BrowserRouter>
           <div>
+            <Navbar />
             <Header />
             <Route exact path="/" component={Landing} />
             <Route exact path="/tourneys" component={TourneyList} />

@@ -1,8 +1,8 @@
 .header {
-  background-color: blue;
-  text-align: center;
-  color: red;
-  height: 120px;
+  background: url('./images/bax_header_background.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  height: -webkit-fill-available;
   width: auto;
 }
 
@@ -43,4 +43,72 @@
 
 .submitBttn:hover {
   background-color: #f4dc42;
+}
+
+.googleBttn {
+  background-color: red;
+}
+
+.global-nav {
+  border-bottom: 1px solid #ba0707;
+  height: 46px;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 40px;
+  overflow: auto;
+}
+
+.global-nav-inner {
+  background: #fff;
+  height: 46px;
+}
+
+.global-nav .container {
+  background-color: yellow;
+  height: 100%;
+  text-align: center;
+  width: auto;
+}
+
+.nav {
+  float: left;
+}
+
+.nav a {
+  color: #4d4d4d;
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  list-style: none;
+  padding: 0;
+  display: block;
+}
+
+li {
+  display: inline;
+  text-align: inherit;
+  color: #66757f;
+  padding-left: 5px;
+}
+
+div {
+  display: block;
+}
+
+.nav > li > a .text {
+  float: left;
+  margin-left: 3px;
+  margin-top: 17px;
+  padding: 0px;
+}
+
+.nav a:hover {
+  color: red;
+  text-decoration: underline;
 }
