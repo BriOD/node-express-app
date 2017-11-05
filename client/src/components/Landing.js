@@ -2,8 +2,8 @@ import React from 'react';
 
 const Landing = () => {
   return (
-    <div>
-      <h1>Your list of tourneys</h1>
+    <div className="landing">
+      <h1>Welcome to Team Bax!!!!</h1>
     </div>
   );
 };

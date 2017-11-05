@@ -23,7 +23,6 @@ class TourneyList extends Component {
   }
 
   render() {
-    console.log('tourneys:', this.props.tourneys);
     return (
       <div className="tourneyList">
         {this.renderTourneys()}

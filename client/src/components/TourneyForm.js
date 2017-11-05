@@ -34,7 +34,7 @@ class TourneyForm extends Component {
 
   render() {
     return (
-      <div>
+      <div className="tourneyForm">
         <form onSubmit={this.props.handleSubmit(this.onSubmit.bind(this))}>
           {this.renderFields()}
           <button className="submitBttn" type="submit">
