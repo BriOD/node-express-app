@@ -12,11 +12,11 @@ class TourneyList extends Component {
   renderTourneys() {
     return this.props.tourneys.map(tourney => {
       return (
-        <div key={tourney._id}>
-          <h3>{tourney.venue}</h3>
-          <h3>{tourney.buyin}</h3>
-          <h3>{new Date(tourney.date).toLocaleDateString()}</h3>
-          <h3>{tourney.receipt}</h3>
+        <div className="tourney" key={tourney._id}>
+          <h3>Venue: {tourney.venue}</h3>
+          <h3>Buy In: {tourney.buyin}</h3>
+          <h3>Date: {new Date(tourney.date).toLocaleDateString()}</h3>
+          <h3>Receipt: {tourney.receipt}</h3>
         </div>
       );
     });
@@ -25,8 +25,7 @@ class TourneyList extends Component {
   render() {
     console.log('tourneys:', this.props.tourneys);
     return (
-      <div>
-        <h1>Tourney List</h1>
+      <div className="tourneyList">
         {this.renderTourneys()}
         <Link to="tourneys/new">Add New Tourney</Link>
       </div>
