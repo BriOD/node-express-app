@@ -13,10 +13,15 @@ class TourneyList extends Component {
     return this.props.tourneys.map(tourney => {
       return (
         <div className="tourney" key={tourney._id}>
-          <h3>Venue: {tourney.venue}</h3>
-          <h3>Buy In: {tourney.buyin}</h3>
-          <h3>Date: {new Date(tourney.date).toLocaleDateString()}</h3>
-          <h3>Receipt: {tourney.receipt}</h3>
+          <h3 className="venue">Venue: {tourney.venue}</h3>
+          <h3 className="buyin">Buy In: {tourney.buyin}</h3>
+          <h3 className="date">
+            Date: {new Date(tourney.date).toLocaleDateString()}
+          </h3>
+          <div className="receipt">
+            <h3>Receipt:</h3>
+            <img src={tourney.receipt} alt="/" height="142" width="142" />
+          </div>
         </div>
       );
     });
