@@ -14,7 +14,20 @@ It uses custom CSS Grid for the styling.
 
 ### Usage
 
-
+To use this app, clone down the directory:
+```
+git clone git@github.com:BriOD/node-express-app.git
+```
+Change into the project's directory:
+```
+cd node-express-app
+```
+Then run:
+```
+npm install
+npm run dev
+```
+The app will then open up in your browser. You will then have to create an account using your Gmail credentials. You will automatically be taken through the Google OAuth flow. After that you will have the ability to create new records, and view all your records.
 
 ### Contributing
 
