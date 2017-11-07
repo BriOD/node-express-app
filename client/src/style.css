@@ -112,9 +112,10 @@ li {
 }
 
 .tourneyList {
+  text-align: center;
   display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 2px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-gap: 1rem;
   grid-column: 1/4;
 }
 
@@ -125,14 +126,9 @@ li {
   background: #3385ff;
 }
 
-@media (min-width: 480px) {
-  .tourneyList {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
 .tourney {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
   grid-template-rows: 1fr 1fr 1fr;
   border-style: solid;
   border-width: 5px;
@@ -151,8 +147,17 @@ li {
   grid-row: 3/4;
 }
 .receipt {
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-template-rows: 1fr 3fr;
   grid-column: 2/3;
   grid-row: 1/4;
+}
+
+.img {
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 .header {
