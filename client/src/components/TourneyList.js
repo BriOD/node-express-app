@@ -19,7 +19,7 @@ class TourneyList extends Component {
           </h3>
           <h3 className="buyin">
             Buy In: <br />
-            {tourney.buyin}
+            ${tourney.buyin}
           </h3>
           <h3 className="date">
             Date: <br />
@@ -36,8 +36,8 @@ class TourneyList extends Component {
 
   render() {
     return (
-      <div className="tourneyList">
-        {this.renderTourneys()}
+      <div className="tourneyContainer">
+        <div className="tourneyList">{this.renderTourneys()}</div>
         <Link to="tourneys/new">Add New Tourney</Link>
       </div>
     );
