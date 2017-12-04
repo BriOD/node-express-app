@@ -23,10 +23,10 @@ class App extends Component {
           <div className="container">
             <Navbar />
             <Header />
+            <Route exact path="/tourneys/:id" component={TourneyShow} />
             <Route exact path="/" component={Landing} />
             <Route exact path="/tourneys" component={TourneyList} />
-            <Route exact path="/tourneys/:id" component={TourneyShow} />
-            <Route exact path="/tourneys/new" component={TourneyForm} />
+            <Route exact path="/tourney/new" component={TourneyForm} />
           </div>
         </BrowserRouter>
       </div>

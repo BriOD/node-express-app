@@ -6,7 +6,8 @@ import tourneysReducer from './tourneysReducer';
 const rootReducer = combineReducers({
   auth: authReducer,
   form: formReducer,
-  tourneys: tourneysReducer
+  tourneys: tourneysReducer,
+  tourney: tourneysReducer
 });
 
 export default rootReducer;

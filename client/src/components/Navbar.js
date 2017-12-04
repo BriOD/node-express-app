@@ -16,7 +16,7 @@ const Navbar = () => {
         </Link>
       </div>
       <div className="nav3">
-        <Link className="text btn" to="/tourneys/new">
+        <Link className="text btn" to="/tourney/new">
           New Tourney
         </Link>
       </div>

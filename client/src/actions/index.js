@@ -19,11 +19,11 @@ export const fetchTourneys = () => async dispatch => {
   dispatch({ type: FETCH_TOURNEYS, payload: res.data });
 };
 
-export const fetchTourney(id) = () => async dispatch => {
+export const fetchTourney = id => async dispatch => {
   const res = await axios.get(`/api/tourneys/${id}`);
 
-  dispatch({type: FETCH_TOURNEY, payload: res.data})
-}
+  dispatch({ type: FETCH_TOURNEY, payload: res.data });
+};
 
 // export function fetchTourneys() {
 //   const req = axios.get('/api/tourneys');

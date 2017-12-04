@@ -47,11 +47,10 @@ class TourneyList extends Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <div className="tourneyContainer">
         <div className="tourneyList">{this.renderTourneys()}</div>
-        <Link to="tourneys/new">Add New Tourney</Link>
+        <Link to="tourney/new">Add New Tourney</Link>
       </div>
     );
   }

@@ -12,6 +12,13 @@ module.exports = app => {
     res.send(tourneys);
   });
 
+  app.get('/api/tourneys/:id', requireLogin, async (req, res) => {
+    // console.log(req.params.id);
+    const tourney = await Tourney.find({ _id: req.params.id });
+    // console.log('tourney:', tourney);
+    res.send(tourney);
+  });
+
   app.post('/api/tourneys', requireLogin, async (req, res) => {
     const { venue, buyin, date, receipt } = req.body;
 
