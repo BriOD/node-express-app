@@ -154,7 +154,7 @@ li {
 .receipt {
   display: grid;
   grid-auto-columns: 1fr;
-  grid-template-rows: 1fr 3fr;
+  grid-template-rows: auto;
   grid-column: 2/3;
   grid-row: 1/4;
 }
@@ -199,4 +199,10 @@ li {
   grid-template-rows: auto;
   grid-column: 1/4;
   grid-row: 4;
+}
+
+.receipt:visited {
+  text-decoration: none;
+  color: inherit;
+  cursor: auto;
 }

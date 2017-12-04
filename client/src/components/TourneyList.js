@@ -22,26 +22,30 @@ class TourneyList extends Component {
   renderTourneys() {
     return this.props.tourneys.map(tourney => {
       return (
-        <Link to={'tourneys/' + tourney._id} key={tourney._id}>
-          <div className="tourney" key={tourney._id}>
-            <h3 className="venue">
-              Venue: <br />
-              <span>{tourney.venue}</span>
-            </h3>
-            <h3 className="buyin">
-              Buy In: <br />
-              ${tourney.buyin}
-            </h3>
-            <h3 className="date">
-              Date: <br />
-              {new Date(tourney.date).toLocaleDateString()}
-            </h3>
-            <div className="receipt">
+        <div className="tourney" key={tourney._id}>
+          <h3 className="venue">
+            Venue: <br />
+            <span>{tourney.venue}</span>
+          </h3>
+          <h3 className="buyin">
+            Buy In: <br />
+            ${tourney.buyin}
+          </h3>
+          <h3 className="date">
+            Date: <br />
+            {new Date(tourney.date).toLocaleDateString()}
+          </h3>
+          <Link
+            className="receipt"
+            to={'tourneys/' + tourney._id}
+            key={tourney._id}
+          >
+            <div>
               <h3>Receipt:</h3>
               <img className="img" src={tourney.receipt} alt="/" />
             </div>
-          </div>
-        </Link>
+          </Link>
+        </div>
       );
     });
   }
