@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { FETCH_USER, FETCH_TOURNEYS } from './types';
+import { FETCH_USER, FETCH_TOURNEYS, FETCH_TOURNEY } from './types';
 
 export const fetchUser = () => async dispatch => {
   const res = await axios.get('/api/current_user');
@@ -18,6 +18,12 @@ export const fetchTourneys = () => async dispatch => {
   // console.log('data', res.data);
   dispatch({ type: FETCH_TOURNEYS, payload: res.data });
 };
+
+export const fetchTourney(id) = () => async dispatch => {
+  const res = await axios.get(`/api/tourneys/${id}`);
+
+  dispatch({type: FETCH_TOURNEY, payload: res.data})
+}
 
 // export function fetchTourneys() {
 //   const req = axios.get('/api/tourneys');
